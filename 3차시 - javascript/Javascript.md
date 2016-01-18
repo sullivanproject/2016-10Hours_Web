@@ -182,7 +182,7 @@ alert(sum);
 
 ## 웹에서의 사용법
 드디어, 웹에서 자바스크립트를 사용하는 방법을 배워보도록 하자.  
-자바스크립트는 CSS와 사용하는 방식이 거의 같습니다.  
+자바스크립트는 _CSS와 사용하는 방식이 거의 같습니다._  
 CSS에서 HTML파일 내부에서 스타일링을 하는 방식과, CSS파일을 따로 만들어서 HTML에서 로딩해오는 방식이 있듯이, 자바스크립트도 같습니다.
 
 ### HTML코드 내부에서 사용하는 방법
@@ -190,14 +190,7 @@ CSS에서 HTML파일 내부에서 스타일링을 하는 방식과, CSS파일을
 > **test.html**
 
 ```html
-<button id="hello">버튼이다!</button>
-<script type="text/javascript">
-	var hello = document.getElementById('hello');
-
-	hello.addEventListener('click', function() {
-		alert('Hello, World!');
-	})
-</script>
+a
 ```
 
 ### 외부에서 파일을 로딩하는 방법
@@ -420,29 +413,42 @@ Ex) `<button onclick="">버튼이다!</button>`
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>테스트</title>
-    <link rel="stylesheet" href="event.css">
+    <title>이벤트 최종예제</title>
+    <style>
+        #wrapper {
+            font-family: sans-serif;
+            margin : auto;
+            text-align: center;
+        }
+
+        #color {
+            width : 300px;
+            height : 300px;
+            margin : auto;
+            background-color: gold;
+        }
+    </style>
 </head>
 <body>
-    <script type="text/javascript">
-    	function changeColor(colorName) {
-		    var elem = document.getElementById('color');
-		    
-		    elem.style.background = colorName;
-		    elem.innerHTML = "현재 색 : " + colorName;
-		}
-    </script>
     <div id="wrapper">
-    	<div id="color" 
-    		 onmouseout="changeColor('hotpink')"
-    		 onmouseover="changeColor('green')">
-    		  버튼을 누르거라.
-	  	</div>
-    	<button onclick="changeColor('skyblue')">바꾸기</button>
+        <div id="color"
+             onmouseout="changeColor('hotpink')"
+             onmouseover="changeColor('green')">
+            버튼을 누르거라.
+        </div>
+        <button onclick="changeColor('skyblue')">바꾸기</button>
     </div>
+    <script type="text/javascript">
+        function changeColor(colorName) {
+            var elem = document.getElementById('color');
+
+            elem.style.background = colorName;
+            elem.innerHTML = "현재 색 : " + colorName;
+        }
+    </script>
 </body>
 </html>
 ```

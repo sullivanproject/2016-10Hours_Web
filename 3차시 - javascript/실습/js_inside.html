@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HTML파일 내부에서 자바스크립트 사용하기</title>
+</head>
+<body>
+    <button id="hello">버튼이다!</button>
+    <script type="text/javascript">
+        var hello = document.getElementById('hello');
+
+        hello.addEventListener('click', function() {
+            alert('Hello, World!');
+        })
+    </script>
+</body>
+</html>

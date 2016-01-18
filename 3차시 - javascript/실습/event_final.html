@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트 최종예제</title>
+    <style>
+        #wrapper {
+            font-family: sans-serif;
+            margin : auto;
+            text-align: center;
+        }
+
+        #color {
+            width : 300px;
+            height : 300px;
+            margin : auto;
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="color"
+             onmouseout="changeColor('hotpink')"
+             onmouseover="changeColor('green')">
+            버튼을 누르거라.
+        </div>
+        <button onclick="changeColor('skyblue')">바꾸기</button>
+    </div>
+    <script type="text/javascript">
+        function changeColor(colorName) {
+            var elem = document.getElementById('color');
+
+            elem.style.background = colorName;
+            elem.innerHTML = "현재 색 : " + colorName;
+        }
+    </script>
+</body>
+</html>

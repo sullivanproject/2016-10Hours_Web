@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM 최종 예제</title>
+</head>
+<body>
+    <div id="victim"></div>
+    <script>
+        var victim = document.getElementById('victim');
+
+        victim.style.width = 300 + "px";
+        victim.style.height = 300 + "px";
+
+        // 조건문
+        if(confirm("핫핑크 싫으세요?")) {
+            victim.style.background = "skyblue";
+            victim.setAttribute("class", "skyblue");
+        } else {
+            victim.style.background = "hotpink";
+            victim.setAttribute("class", "hotpink");
+        }
+
+        alert("원하시는대로.");
+    </script>
+</body>
+</html>
